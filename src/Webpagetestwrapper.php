@@ -202,7 +202,7 @@ class Webpagetestwrapper {
       return FALSE;
     }
     $data = $this->_getApi()
-            ->setApiAddress($this->_wpt_b_url . $this->_teststatus_url)
+            ->setApiAddress($this->_wpt_b_url . $this->_testrestults_url)
             ->apiCall($this->_populateResultsArguments($test_id));
     return $data;
   }
