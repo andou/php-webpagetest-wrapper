@@ -31,8 +31,8 @@ use Andou\Api\Api;
  * 
  * 
  * @author Antonio Pastorino <antonio.pastorino@gmail.com>
- * @category apitool
- * @package andou/apitool
+ * @category webpagetestwrapper
+ * @package andou/webpagetestwrapper
  * @copyright MIT License (http://opensource.org/licenses/MIT)
  */
 class Webpagetestwrapper {
@@ -136,6 +136,7 @@ class Webpagetestwrapper {
    */
   public function setLocation($_location) {
     $this->_location = $_location;
+    return $this;
   }
 
   /**
@@ -145,6 +146,7 @@ class Webpagetestwrapper {
    */
   public function setBrowser($_browser) {
     $this->_browser = $_browser;
+    return $this;
   }
 
   /**
@@ -154,6 +156,7 @@ class Webpagetestwrapper {
    */
   public function setConnectivity($_connectivity) {
     $this->_connectivity = $_connectivity;
+    return $this;
   }
 
   /**
