@@ -233,7 +233,7 @@ class Webpagetestwrapper {
       $res[WPT_PARAMETER_FORMAT] = $this->_return_format;
     }
 
-    $location = $this->_composeLocation();
+    $location = $this->composeLocation();
     if ($location != "") {
       $res[WPT_PARAMETER_LOCATION] = $location;
     }
@@ -291,7 +291,7 @@ class Webpagetestwrapper {
    * 
    * @return string
    */
-  protected function _composeLocation() {
+  public function composeLocation() {
     $loc = isset($this->_location) ? sprintf("%s", $this->_location) : "";
     $brw = isset($this->_browser) ? sprintf(":%s", $this->_browser) : "";
     $con = isset($this->_connectivity) ? sprintf(".%s", $this->_connectivity) : "";
