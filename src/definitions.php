@@ -15,3 +15,4 @@ define("WPT_PARAMETER_URL", "url");
 define("WPT_PARAMETER_TESTID", "test");
 define("WPT_PARAMETER_REQUESTID", "r");
 define("WPT_PARAMETER_LOCATION", "location");
+define("WPT_PARAMETER_RUNS", "runs");

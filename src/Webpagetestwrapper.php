@@ -165,13 +165,13 @@ class Webpagetestwrapper {
    * @param string $url_to_test
    * @return boolean|string
    */
-  public function runTest($url_to_test = FALSE) {
+  public function runTest($url_to_test = FALSE, $runs = 1) {
     if (!$url_to_test) {
       return FALSE;
     }
     $data = $this->_getApi()
             ->setApiAddress($this->_wpt_b_url . $this->_runtest_url)
-            ->apiCall($this->_populateRunTestArguments($url_to_test));
+            ->apiCall($this->_populateRunTestArguments($url_to_test, $runs));
     return $data;
   }
 
@@ -222,7 +222,7 @@ class Webpagetestwrapper {
    * @param string $url_to_test
    * @return array
    */
-  protected function _populateRunTestArguments($url_to_test) {
+  protected function _populateRunTestArguments($url_to_test, $runs = 1) {
     $res = array();
 
     if (isset($this->_api_key)) {
@@ -239,6 +239,11 @@ class Webpagetestwrapper {
     }
 
     $res[WPT_PARAMETER_URL] = $url_to_test;
+
+    if ($runs && $runs > 1) {
+      $res[WPT_PARAMETER_RUNS] = (int) $runs;
+    }
+
 
     return $res;
   }
